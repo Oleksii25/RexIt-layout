@@ -1,8 +1,9 @@
-import './App.css';
+import './styles/index.scss';
+import { UpperSection } from './components/UpperSection/UpperSection';
 
 function App() {
   return (
-    <p>sdgsdgsaddfsdfg</p>
+    <UpperSection /> 
   );
 }
 
