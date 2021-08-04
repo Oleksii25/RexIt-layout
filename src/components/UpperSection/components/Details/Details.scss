@@ -1,3 +1,4 @@
+@import '../../../../styles/utils/size-variables.scss';
 .upper-info {
   background: url('./Details-bg.svg');
   height: 60px;
@@ -5,10 +6,13 @@
 
   &__wrapper {
     height: 100%;
-    margin: 0 auto;
-    display: flex;
     max-width: 950px;
+    margin: 0 auto;
+
+    display: flex;
     justify-content: flex-end;
+    position: relative;
+
     color:#fff;
     align-items: center;
   }
@@ -29,6 +33,23 @@
       content: url('./angle-down.svg');
       padding-left: 14px;
     }
-    
+  }
+  
+  &__logo {
+    font-family: 'Kristi', sans-serif;
+    font-size: $medium-large;
+
+    position: absolute;
+    left: 12px;
+    bottom: -25px;
+
+    &::after {
+      content: 'logo';
+      position: absolute;
+      font-family: 'Lato', sans-serif;
+      font-size: 18px;
+      bottom: -5px;
+      right: -15px;
+    }
   }
 }

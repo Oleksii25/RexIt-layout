@@ -5,6 +5,9 @@ export function Details() {
   return (
     <div className='upper-info'>
       <div className='upper-info__wrapper'>
+        <span className='upper-info__logo'>
+          Cracker
+        </span>
         <span className='upper-info__total '>
           TOTAL: 
         </span>

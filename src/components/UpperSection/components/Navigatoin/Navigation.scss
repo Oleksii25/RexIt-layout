@@ -1,0 +1,41 @@
+.nav {
+  background-color: rgba(51, 51, 51, 0.6);
+  height: 120px;
+
+  &__list{
+    height: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    margin-top: 50px;
+    padding-right: 65px;
+    color: #fff;
+    
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: #fff;
+    font-family: 'Fredoka One', sans-serif;
+    text-align: center;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+  }
+}
+
+.active {
+  &::after {
+    content:url('./underline.svg');
+  }
+}
