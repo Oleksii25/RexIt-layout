@@ -1,8 +1,10 @@
 @import '../../../../styles/utils/size-variables.scss';
+
 .upper-info {
   background: url('./Details-bg.svg');
   height: 60px;
   font-size: 14px;
+  position: relative;
 
   &__wrapper {
     height: 100%;
@@ -25,7 +27,27 @@
     padding-right: 70px;
   }
 
+  &__orders {
+    position: relative;
+    height:60px;
+    padding-right: 80px;
+    padding-top: 20px;
+  }
+
+  &__orders-amount {
+    border-radius: 50%;
+    width: 20px;
+    height:20px;
+    text-align: center;
+    line-height: 20px;
+    background-color: rgb(255, 66, 0);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+
   &__details {
+    display: block;
     padding-right: 24px;
     cursor: pointer;
 
@@ -34,7 +56,7 @@
       padding-left: 14px;
     }
   }
-  
+
   &__logo {
     font-family: 'Kristi', sans-serif;
     font-size: $medium-large;
@@ -49,7 +71,25 @@
       font-family: 'Lato', sans-serif;
       font-size: 18px;
       bottom: -5px;
-      right: -15px;
+      right: -20px;
+    }
+  }
+
+  @media (max-width: 530px) {
+    &__logo {
+      display: none;
+    }
+
+    &__wrapper {
+      justify-content: center;
+    }
+
+    &__amount {
+      padding-right: 10px;
+    }
+
+    &__orders {
+      padding-right: 30px;
     }
   }
 }
