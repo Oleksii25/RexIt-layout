@@ -1,0 +1,17 @@
+.middle {
+  background: url('./middle-bg.png') no-repeat;
+  height: 1355px;
+  background-size: cover;
+
+  &__content-wrapper {
+    background: url('./white-rectangle.png') no-repeat center;
+    height: 1355px;
+    background-size: cover;
+  }
+
+  @media (max-width: 1000px) {
+    & {
+      background-position: center;
+    }
+  }
+}
