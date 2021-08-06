@@ -5,7 +5,7 @@ import './Details.scss'
 
 export function Details() {
   const [orders, setOrders] = useState(1);
-  const [infoVisible, setInfoVisible] = useState(true);
+  const [infoVisible, setInfoVisible] = useState(false);
   console.log(infoVisible)
 
   return (
@@ -33,9 +33,8 @@ export function Details() {
         </span>
         <span className='upper-info__amount'>143 €</span> 
         <a
-          type='button'
           className='upper-info__details'
-          onClick={()=> setInfoVisible(true)}
+          onMouseOver={()=> setInfoVisible(true)}
         >
           DETAILS
         </a>

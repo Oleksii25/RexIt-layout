@@ -20,14 +20,13 @@ useEffect(() => {
 
   return (
     <nav className='nav' name='navigation'>
-      <a 
+      <button 
         className={toggler 
           ? 'nav__icon--active'
           : 'nav__icon'
         }
-        href="#"
         onClick={() => setToggler((prevToogler) => !prevToogler)}
-      ></a>
+      ></button>
       <ul 
         className={
           windowWidth > 800
@@ -36,7 +35,7 @@ useEffect(() => {
         }
         style={
           toggler
-            ? {zIndex: '1'}
+            ? {zIndex: '2'}
             : {zIndex: '-2'}
         }
       >
