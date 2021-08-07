@@ -2,7 +2,7 @@
 
 .about {
   max-width: 1920px;
-  margin: 80px auto 0;
+  margin: 0 auto;
   position: relative;
 
   &__title {
@@ -17,7 +17,7 @@
     z-index: 1;
 
     max-width: 1475px;
-    margin-bottom: 115px;
+    padding-top: 80px;
   }
 
   &__cookie {
@@ -29,14 +29,14 @@
     border-radius: 50%;
 
     position: absolute;
-    top: 0;
+    top: 80px;
     left: 27.6%;
   }
 
   &__content {
     position: absolute;
     right: 0;
-    top: 105px;
+    top: 185px;
 
     width: 64%;
     min-height: 364px;

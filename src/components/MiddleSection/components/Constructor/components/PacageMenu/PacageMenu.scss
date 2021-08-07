@@ -1,0 +1,32 @@
+.constructor__pacage-list {
+  width: 41.7%;
+  height: 180px;
+  border-radius: 30px;
+  background-color: #f4f4f4;
+  border: 1px solid #ff4200;
+
+  position: absolute;
+  left: 170px;
+  top: 70px;
+  z-index: 1;
+}
+
+.constructor__pacage-item {
+  font-size: 24px;
+  width: 62.5%;
+  line-height: 60px;
+  color: #ff4200;
+  font-family: "Avenir";
+  text-align: center;
+
+  height: 33%;
+  margin: 0 auto;
+
+  &:hover {
+    background-color: #aaa;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #ff4200;
+  }
+}

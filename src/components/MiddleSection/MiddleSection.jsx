@@ -1,5 +1,6 @@
 import React from 'react';
 import { About } from './components/About/About';
+import { Constructor } from './components/Constructor/Constructor';
 import './MiddleSection.scss';
 
 export function MiddleSection() {
@@ -7,6 +8,7 @@ export function MiddleSection() {
     <section className='middle'>
       <div className='middle__content-wrapper'>
         <About />
+        <Constructor />
       </div>
     </section>
   )

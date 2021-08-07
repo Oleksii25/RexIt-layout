@@ -1,0 +1,120 @@
+@import '../../../../styles/utils/size-variables.scss';
+
+.constructor {
+  max-width: 1920px;
+  margin:560px auto 0;
+  text-align: center;
+
+  &__title {
+    margin: 0 auto 80px;
+    font-size: $medium;
+    letter-spacing: 10px;
+    line-height: 60px;
+    color: #333;
+    font-family: "Fredoka One";
+    text-align: center;
+  }
+
+  &__value, &__amount {
+    font-size: $small;
+    line-height: 36px;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &__value {
+    margin-left: 18%;
+  }
+
+  &__amount {
+    font-size: 30px;
+    margin-left: 15px;
+  }
+
+  &__range-list {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  &__item {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  &__pacage-wrapper {
+    max-width:50%;
+    margin: 15px auto 0;
+    display: flex;
+    position: relative;
+  }
+
+  &__pacage-button {
+    margin-left: 110px;
+    width: 41.7%;
+    height: 60px;
+    border-radius: 40px;
+    border: 1px solid #ff4200;
+    position: relative;
+    
+
+    font-size: $small;
+    line-height: 60px;
+    color: #ff4200;
+    font-family: "Fredoka One";
+    text-align: center;
+
+    &::after {
+      content: url('./components/icons/angle-down.svg');
+      margin-left: 5%;
+      position: absolute;
+    }
+  }
+
+  &__buttons {
+    width: 50%;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__add-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    cursor: pointer;
+
+    filter: drop-shadow(0 0 3px rgba(0,0,0,0.12)) drop-shadow(0px 6px 3px rgba(0,0,0,0.24));
+    background-color: #ff4200;
+    background-image: url('./plusToAdd.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: absolute;
+    bottom: 50%;
+    right: 5%;
+    transform: translateY(50%);
+  }
+
+  &__hidden-button {
+    width: 220px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #ff4200;
+    cursor: pointer;
+
+    font-size: $small;
+    line-height: 60px;
+    color: #fff;
+    font-family: "Fredoka One";
+    text-align: center;
+    position: absolute;
+    right: 0;
+    bottom: 13%;
+    transition: transform 1s;
+    transform: translateX(100%);
+  }
+}
