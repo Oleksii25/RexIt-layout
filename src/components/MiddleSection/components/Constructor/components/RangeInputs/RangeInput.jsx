@@ -7,7 +7,7 @@ import './CornRange.scss';
 
 
 
-export function RangeInput({ icon, name }) {
+export function RangeInput({ icon, name, onChange, value, disabled }) {
   return (
     <>
       <img
@@ -16,14 +16,16 @@ export function RangeInput({ icon, name }) {
         className='constructor__ingridient-icon'
       />
       <input
+        onChange={({ target }) => onChange(target.value, target.name)}
         name={name}
         type="range"
         className={`constructor__input constructor__input--${name}`}
         max='100'
         min='0'
-        defaultValue='0'
+        value={value}
+        disabled={disabled}
       />
-      <span className='constructor__proportion-value'>10%</span>
+      <span className='constructor__proportion-value'>{value}%</span>
     </>
     
   )

@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import { OrderInfo } from './components/Order-info/Order-info';
-import icon from './semen.png'
+import { useSelector } from 'react-redux';
+import { OrderInfo } from './components/Order-info/Order-info.jsx';
+import icon from './icons/semen.png'
 import './Details.scss'
 
 export function Details() {
-  const [orders, setOrders] = useState(1);
+  const orders = useSelector(state => state.orders.orders);
+
+  const totalPrice = orders.reduce(
+    (totalPrice,currentOrder) => totalPrice + currentOrder.price, 0);
+
   const [infoVisible, setInfoVisible] = useState(false);
-  console.log(infoVisible)
 
   return (
     <div className='upper-info'>
@@ -21,8 +25,8 @@ export function Details() {
               alt="semen-icon"
               className='upper-info__icon'
             />
-            {!orders || <div className='upper-info__orders-amount'>
-              { orders }
+            {!orders.length || <div className='upper-info__orders-amount'>
+              { orders.length }
           </div>}
         </div>
         <span className='upper-info__logo'>
@@ -31,13 +35,14 @@ export function Details() {
         <span className='upper-info__total '>
           TOTAL: 
         </span>
-        <span className='upper-info__amount'>143 €</span> 
-        <a
+        <span className='upper-info__amount'>{totalPrice} €</span> 
+        <button
+          type='button'
           className='upper-info__details'
           onMouseOver={()=> setInfoVisible(true)}
         >
           DETAILS
-        </a>
+        </button>
       </div>
     </div>
   )

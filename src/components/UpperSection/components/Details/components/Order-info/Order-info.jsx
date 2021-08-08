@@ -1,14 +1,34 @@
-import React, { useState } from 'react';
-import ing1 from './ingredient1.svg';
-import ing2 from './ingredient2.svg';
-import ing3 from './ingredient3.svg';
-import ing4 from './ingredient4.svg';
-import semen from './semen.svg';
-import close from './close.svg';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { removeOrder } from '../../../../../../redux/counter/counterActions';
+
+import { Order } from './components/Order';
+
+import ing1 from './icons/ingredient1.svg';
+import ing2 from './icons/ingredient2.svg';
+import ing3 from './icons/ingredient3.svg';
+import ing4 from './icons/ingredient4.svg';
+
 import './Order-info.scss';
 
-export function OrderInfo({ orders, onClick, infoVisible}) {
-  console.log(infoVisible)
+export function OrderInfo({ onClick, infoVisible}) {
+
+  const orders = useSelector((state) => state.orders.orders);
+  const dispatch = useDispatch();
+
+  const totalPrice = orders.reduce(
+    (totalPrice,currentOrder) => totalPrice + currentOrder.price, 0);
+
+  const deleteOrder = (order) => {
+    dispatch(removeOrder(order));
+  }
+
+  const checkOrder = () => {
+    if(!orders.length) {
+      alert('Make an order')
+    }
+  }
 
   return (
     <section className='order-info' style={{display:
@@ -27,30 +47,28 @@ export function OrderInfo({ orders, onClick, infoVisible}) {
         <img src={ing3} alt="third ingredient" className='order-info__logo'/>
         <img src={ing4} alt="fourth ingredient" className='order-info__logo'/>
       </div>
-      <ul className='order-info__list'>
-        <li className='order-info__item'>
-          <img src={semen} alt="semen ico" className='order-info__semen'/>
-          <div className='order-info__numbers'>
-            <div className='order-info__proportion'>24%</div>
-            <div className='order-info__proportion'>24%</div>
-            <div className='order-info__proportion'>24%</div>
-            <div className='order-info__proportion'>28%</div>
-            <div className='order-info__mass'>1.5 kg</div>
-            <div className='order-info__price'>83 €</div>
-          </div>
-          <a href="#" className='order-info__close'>
-            <img src={close} alt="close ico"/>
-          </a>
+      <ul className='order-info__list'>{
+        orders.map(order => (
+          <li className='order-info__item'>
+            <Order
+              order={order}
+              onClick={deleteOrder}
+            />
         </li>
+        ))
+      }
       </ul>
       <div className='order-info__amount'>
         <span className='order-info__total'>
           TOTAL: 
           <span>
-            143 €
+            {totalPrice} €
           </span>  
         </span>
-        <button className='order-info__button-check'>
+        <button 
+          className='order-info__button-check'
+          onClick={checkOrder}
+        >
           CHECKOUT
         </button>
       </div>

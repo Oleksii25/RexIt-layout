@@ -1,7 +1,7 @@
 @import '../../../../styles/utils/size-variables.scss';
 
 .upper-info {
-  background: url('./Details-bg.svg');
+  background: url('./icons/Details-bg.svg');
   height: 60px;
   font-size: 14px;
   position: relative;
@@ -50,9 +50,12 @@
     display: block;
     padding-right: 24px;
     cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
 
     &::after {
-      content: url('./angle-down.svg');
+      content: url('./icons/angle-down.svg');
       padding-left: 14px;
     }
   }

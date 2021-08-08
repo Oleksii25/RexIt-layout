@@ -1,9 +1,17 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Address.scss';
 
 export function Address() {
+  const[here, setHere] = useState(true);
+  const location = useLocation();
+
   return (
-    <article className='address'>
+    <article
+      className='address'
+      id='CONTACTS'
+    >
       <span className='address__icon'>
         ADDRESS
       </span>

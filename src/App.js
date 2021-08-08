@@ -1,7 +1,8 @@
-import './styles/index.scss';
-import { UpperSection } from './components/UpperSection/UpperSection';
-import { MiddleSection } from './components/MiddleSection/MiddleSection';
-import { BottomSection } from './components/BottomSection/BottomSection';
+import React from 'react';
+import './styles/index.scss'
+import { UpperSection } from './components/UpperSection/UpperSection'
+import { MiddleSection } from './components/MiddleSection/MiddleSection'
+import { BottomSection } from './components/BottomSection/BottomSection'
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <MiddleSection />
       <BottomSection />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

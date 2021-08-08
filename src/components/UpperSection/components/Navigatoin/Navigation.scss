@@ -10,13 +10,13 @@
     height: 40px;
     width: 40px;
     margin: 0 auto;
-    background: url('./menu_white.svg') no-repeat center;
+    background: url('./icons/menu_white.svg') no-repeat center;
     background-size: contain;
     cursor: pointer;
   }
 
   &__icon--active {
-    background: url('./close_white.svg') no-repeat center;
+    background: url('./icons/close_white.svg') no-repeat center;
     animation-name: menu-toggler;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -67,7 +67,7 @@
     }
 
     &::after {
-      content:url('./underline.svg');
+      content:url('./icons/underline.svg');
       opacity: 0;
     }
   }
