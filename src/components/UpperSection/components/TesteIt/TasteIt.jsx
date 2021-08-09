@@ -15,7 +15,7 @@ export function TasteIt() {
         Lorem ipsum dolor sit amet,
         </p>
       </article>
-      <a href='#' className='tasty__button'> TASTE IT</a>
+      <a href='#constructor' className='tasty__button'> TASTE IT</a>
     </section>
   )
 }

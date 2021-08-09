@@ -3,7 +3,7 @@ import './Share.scss';
 
 export function Share() {
   return (
-    <article className='share'>
+    <article className='share' id='share'>
       <span className='share__icon'>
         SHARE US
       </span>

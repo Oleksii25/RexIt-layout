@@ -112,7 +112,7 @@ export function Constructor() {
   }
 
   return (
-    <section className='constructor'>
+    <section className='constructor' id='constructor'>
       <h2  className='constructor__title'>
         CRACKER CONSTRUCTOR
       </h2>
@@ -121,6 +121,12 @@ export function Constructor() {
           {totalPrice}€
         </span>
       </span>
+      <div className='constructor__icons-wrapper--700px'>
+        <img src={soy} alt="soy icon" name='soy'/>
+        <img src={sesame} alt="sesame icon" name='sesame'/>
+        <img src={wheat} alt="wheat icon" name='wheat'/>
+        <img src={corn} alt="corn icon" name='corn'/>
+      </div>
       <ul className='constructor__range-list' >
         <li className='constructor__item'>
           <RangeInput
@@ -168,7 +174,7 @@ export function Constructor() {
         <button
           className='constructor__pacage-button'
           type='button'
-          onClick={() => setPacageMenuVisibility(true)}
+          onClick={() => setPacageMenuVisibility((prevState) => !prevState)}
         >
           {pacageSize || 'CHOOSE YOUR PACK'}
         </button>
@@ -188,7 +194,7 @@ export function Constructor() {
         <button
           type='button'
           className='constructor__hidden-button'
-          onMouseOver={() => setTranslateAddButton(225)}
+          onMouseOut={() => setTranslateAddButton(225)}
           onClick={makeNewOrder}
           style={{transform: `translateX(${translateAddButton}px)`}}
         >

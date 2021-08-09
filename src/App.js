@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import './styles/index.scss'
 import { UpperSection } from './components/UpperSection/UpperSection'
 import { MiddleSection } from './components/MiddleSection/MiddleSection'

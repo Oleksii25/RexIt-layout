@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import cn from 'classnames'
 import './Navigation.scss';
 
 export function Navigation() {
 const [windowWidth, setWindowWidth] = useState(0);
+const [toggler, setToggler] = useState(false);
 
 useEffect(() => {
   setWindowWidth(window.innerWidth)
@@ -12,93 +15,91 @@ useEffect(() => {
   })
 }, [])
 
-  const [toggler, setToggler] = useState(false);
-
   if(windowWidth > 800 && toggler) {
     setToggler(false)
   }
 
+  const location = useLocation();
+  console.log(location)
   return (
     <nav
       className='nav'
       name='navigation'
-      id='HOME'
-      
+      id='home'
     >
       <button 
-        className={toggler 
-          ? 'nav__icon--active'
-          : 'nav__icon'
-        }
+        className={cn({
+          'nav__icon--active': toggler,
+          'nav__icon': !toggler,
+        })}
         onClick={() => setToggler((prevToogler) => !prevToogler)}
       ></button>
       <ul 
-        className={
-          windowWidth > 800
-            ? 'nav__list'
-            : 'nav__list--width800'
-        }
+        className={cn({
+          'nav__list': windowWidth > 800,
+          'nav__list--width800': windowWidth < 800,
+        })}
         style={
           toggler
-            ? {zIndex: '2'}
-            : {zIndex: '-2'}
+            ? {display: 'block'}
+            : {display: 'none'}
         }
       >
         <li className='nav__item'>
-          <NavLink
-            to='/'
-            exact
-            className='nav__link'
-            activeClassName='nav__link--active'
+          <HashLink
+            to='#home'
+            className={cn('nav__link',{
+              'nav__link--active': location.hash.includes('#home')
+                || location.hash.length === 0,
+            })}
+            onClick={() => setToggler(false)}
           >
             HOME
-          </NavLink>
+          </HashLink>
         </li>
         <li className='nav__item'>
-          <NavLink
-            to='/ABOUT US'
-            exact
-            className='nav__link'
-            activeClassName='nav__link--active'
+          <HashLink
+            to='#about us'
+            className={cn('nav__link',{
+              'nav__link--active': location.hash.includes('#about us'),
+            })}
+            onClick={() => setToggler(false)}
           >
             ABOUT US
-          </NavLink>
+          </HashLink>
         </li>
         <li className='nav__item'>
-          <NavLink
-            to='/CONTACTS'
-            exact
-            className='nav__link'
-            activeClassName='nav__link--active'
+          <HashLink
+            to='#contacts'
+            className={cn('nav__link',{
+              'nav__link--active': location.hash.includes('#contacts'),
+            })}
+            onClick={() => setToggler(false)}
           >
             CONTACTS
-          </NavLink>
+          </HashLink>
         </li>
         <li className='nav__item'>
-          <NavLink
-            exact
-            to={{
-              pathname: '/CHECK',
-              search: 'address',
-              hash: '#CONTACTS',
-              state: {here: true}
-            }}
-            className='nav__link'
-            activeClassName='nav__link--active'
+          <HashLink
+            to='#constructor'
+            className={cn('nav__link',{
+              'nav__link--active': location.hash.includes('#constructor'),
+            })}
+            onClick={() => setToggler(false)}
           >
             CHECKOUT
-          </NavLink>
+          </HashLink>
         </li>
         <li className='nav__item'>
-          <NavLink
-            exact
-            to='/SHARE'
-            href='#CONTACTS'
-            className='nav__link'
-            activeClassName='nav__link--active'
+          <HashLink
+            to='#share'
+            className={cn('nav__link',{
+              'nav__link--active': location.hash.includes('#share'),
+            })}
+            onClick={() => setToggler(false)}
           >
             ACCOUNT
-          </NavLink>
+          </HashLink>
         </li>
       </ul>
     </nav>

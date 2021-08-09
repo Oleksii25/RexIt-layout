@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useLayoutEffect, useState } from 'react';
+import React from 'react';
 import { Details } from './components/Details/Details';
 import { Navigation } from './components/Navigatoin/Navigation';
 import { TasteIt } from './components/TesteIt/TasteIt';

@@ -1,5 +1,6 @@
 .share {
   padding-right: 10px;
+  width: 350px;
 
   &__icon {
     display: flex;
@@ -12,7 +13,7 @@
     font-family: "Fredoka One";
 
     &::before {
-      content: url('./share.svg');
+      content: url('./icons/share.svg');
       padding-left: 10px;
       padding-right: 18px;
     }
@@ -31,20 +32,50 @@
     letter-spacing: 1px;
     line-height: 25px;
     color: #fff;
+
+    &::after {
+      position: relative;
+      right: -65px;
+      top: 10px;
+      padding-right: 10px;
+    }
   }
 
   &__link--pr {
-    background: url('./pinterest.svg') no-repeat center;
+    background: url('./icons/pinterest.svg') no-repeat center;
+    &::after {
+      content: 'https://www.pinterest.com/';
+    }
   }
 
   &__link--fb {
-    background: url('./facebook.svg') no-repeat bottom;
+    background: url('./icons/facebook.svg') no-repeat bottom;
     background-position-x: 70%;
+
+    &::after {
+      content: 'https://www.facebook.com/';
+    }
   }
 
   &__link--gl {
-    background: url('./google.svg') no-repeat;
+    background: url('./icons/google.svg') no-repeat;
     background-position: 70% 70%;
+
+    &::after {
+      content: 'https://www.google.com/';
+    }
+  }
+
+  @media (max-width: 800px) {
+    & {
+      width: auto;
+    }
+
+    &__link {
+      &::after {
+        display: none;
+      }
+    }
   }
 
   @media (max-width: 570px) {
