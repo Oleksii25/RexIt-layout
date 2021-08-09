@@ -24,9 +24,9 @@ function AboutComponent() {
           dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius
           modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
         </p>
-        <span className='about__logo'>
+        <a href='#home' className='about__logo'>
           Cracker
-        </span>
+        </a>
       </article>
     </section>
   )

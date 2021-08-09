@@ -29,9 +29,9 @@ function DetailsComponent() {
               { orders.length }
           </div>}
         </div>
-        <span className='upper-info__logo'>
+        <a className='upper-info__logo' href='https://crackersandcompanycafe.com/'>
           Cracker
-        </span>
+        </a>
         <span className='upper-info__total '>
           TOTAL: 
         </span>
