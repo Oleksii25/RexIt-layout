@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/RexIt-layout/static/css/main.62ae8c72.chunk.css",
-    "main.js": "/RexIt-layout/static/js/main.ffa0d9f7.chunk.js",
-    "main.js.map": "/RexIt-layout/static/js/main.ffa0d9f7.chunk.js.map",
+    "main.js": "/RexIt-layout/static/js/main.bdf5295e.chunk.js",
+    "main.js.map": "/RexIt-layout/static/js/main.bdf5295e.chunk.js.map",
     "runtime-main.js": "/RexIt-layout/static/js/runtime-main.b0748cc8.js",
     "runtime-main.js.map": "/RexIt-layout/static/js/runtime-main.b0748cc8.js.map",
     "static/js/2.79beb763.chunk.js": "/RexIt-layout/static/js/2.79beb763.chunk.js",
@@ -38,6 +38,6 @@
     "static/js/runtime-main.b0748cc8.js",
     "static/js/2.79beb763.chunk.js",
     "static/css/main.62ae8c72.chunk.css",
-    "static/js/main.ffa0d9f7.chunk.js"
+    "static/js/main.bdf5295e.chunk.js"
   ]
 }
