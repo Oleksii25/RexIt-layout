@@ -10,6 +10,9 @@ const [menuVisibility, setMenuVisibility] = useState(true);
 const location = useLocation();
 
 useEffect(() => {
+  if(window.innerWidth <= 800) {
+    setMenuVisibility(false);
+  }
   setWindowWidth(window.innerWidth)
   window.addEventListener('resize', () => {
     setWindowWidth(window.innerWidth);

@@ -38,6 +38,8 @@ function ConstructorComponent() {
   const [pacageMenuVisibility, setPacageMenuVisibility ] = useState(false);
 
   const [newOrder, setNewOrder] = useState(initialOrder);
+
+  const [orderId, setOrderId] = useState(1);
   
 
   const changeOrdersPropportion = (value, name) => {
@@ -65,7 +67,6 @@ function ConstructorComponent() {
   };
 
   const changePacageSize = (name) => {
-    console.log(name)
     setPacageSize(`${name.toUpperCase()} PACK`);
 
     switch (name) {
@@ -106,7 +107,12 @@ function ConstructorComponent() {
       return;
     };
 
-    dispatch(addOrder(newOrder));
+    setOrderId(prevOrderId => (prevOrderId + 1));
+
+    dispatch(addOrder({
+      ...newOrder,
+      id: orderId,
+    }));
     setNewOrder(initialOrder);
     setPacageSize('');
   }

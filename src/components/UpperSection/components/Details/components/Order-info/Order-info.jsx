@@ -30,7 +30,6 @@ function OrderInfoComponent({ onClick, infoVisible}) {
       alert('Make an order')
     }
   }
-
   return (
     <section className='order-info' style={{display:
       infoVisible
@@ -50,7 +49,7 @@ function OrderInfoComponent({ onClick, infoVisible}) {
       </div>
       <ul className='order-info__list'>{
         orders.map(order => (
-          <li className='order-info__item'>
+          <li className='order-info__item' key={order.id}>
             <Order
               order={order}
               onClick={deleteOrder}
