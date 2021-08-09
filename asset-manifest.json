@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/RexIt-layout/static/css/main.cb8d5f04.chunk.css",
-    "main.js": "/RexIt-layout/static/js/main.c1ab9cfd.chunk.js",
-    "main.js.map": "/RexIt-layout/static/js/main.c1ab9cfd.chunk.js.map",
+    "main.js": "/RexIt-layout/static/js/main.ffa0d9f7.chunk.js",
+    "main.js.map": "/RexIt-layout/static/js/main.ffa0d9f7.chunk.js.map",
     "runtime-main.js": "/RexIt-layout/static/js/runtime-main.b0748cc8.js",
     "runtime-main.js.map": "/RexIt-layout/static/js/runtime-main.b0748cc8.js.map",
-    "static/js/2.227a4048.chunk.js": "/RexIt-layout/static/js/2.227a4048.chunk.js",
-    "static/js/2.227a4048.chunk.js.map": "/RexIt-layout/static/js/2.227a4048.chunk.js.map",
+    "static/js/2.79beb763.chunk.js": "/RexIt-layout/static/js/2.79beb763.chunk.js",
+    "static/js/2.79beb763.chunk.js.map": "/RexIt-layout/static/js/2.79beb763.chunk.js.map",
     "index.html": "/RexIt-layout/index.html",
     "static/css/main.cb8d5f04.chunk.css.map": "/RexIt-layout/static/css/main.cb8d5f04.chunk.css.map",
-    "static/js/2.227a4048.chunk.js.LICENSE.txt": "/RexIt-layout/static/js/2.227a4048.chunk.js.LICENSE.txt",
+    "static/js/2.79beb763.chunk.js.LICENSE.txt": "/RexIt-layout/static/js/2.79beb763.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/RexIt-layout/static/media/Avenir-Heavy.9a5eab6b.ttf",
     "static/media/BottomSection.scss": "/RexIt-layout/static/media/Bottom-bg.0e9d7500.png",
     "static/media/About.scss": "/RexIt-layout/static/media/Cookie.d3c630c0.png",
@@ -36,8 +36,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b0748cc8.js",
-    "static/js/2.227a4048.chunk.js",
+    "static/js/2.79beb763.chunk.js",
     "static/css/main.cb8d5f04.chunk.css",
-    "static/js/main.c1ab9cfd.chunk.js"
+    "static/js/main.ffa0d9f7.chunk.js"
   ]
 }
