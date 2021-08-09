@@ -4,7 +4,7 @@ import { OrderInfo } from './components/Order-info/Order-info.jsx';
 import icon from './icons/semen.png'
 import './Details.scss'
 
-export function Details() {
+function DetailsComponent() {
   const orders = useSelector(state => state.orders.orders);
 
   const totalPrice = orders.reduce(
@@ -47,3 +47,5 @@ export function Details() {
     </div>
   )
 }
+
+export const Details = React.memo(DetailsComponent);

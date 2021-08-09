@@ -13,7 +13,7 @@ import wheat from './components/icons/wheat.svg';
 import corn from './components/icons/corn.svg';
 import pacage from './pacage.svg';
 
-export function Constructor() {
+function ConstructorComponent() {
   const priceFor1kg = 50;
   const initialOrder = {
     soy: 0,
@@ -204,3 +204,5 @@ export function Constructor() {
     </section>
   )
 };
+
+export const Constructor = React.memo(ConstructorComponent);

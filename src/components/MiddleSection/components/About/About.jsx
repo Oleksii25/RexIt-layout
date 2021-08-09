@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.scss';
 
-export function About() {
+function AboutComponent() {
   return (
     <section className='about' id='about us'>
       <h2 className='about__title'>
@@ -31,3 +31,5 @@ export function About() {
     </section>
   )
 }
+
+export const About = React.memo(AboutComponent);

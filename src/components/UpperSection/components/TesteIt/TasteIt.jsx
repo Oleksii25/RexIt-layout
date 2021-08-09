@@ -1,7 +1,7 @@
 import React from 'react';
 import './TasteIt.scss';
 
-export function TasteIt() {
+function TasteItComponent() {
   return (
     <section className='tasty'>
       <h1 className='tasty__title'>
@@ -19,3 +19,5 @@ export function TasteIt() {
     </section>
   )
 }
+
+export const TasteIt = React.memo(TasteItComponent);

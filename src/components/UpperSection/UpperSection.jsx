@@ -4,7 +4,7 @@ import { Navigation } from './components/Navigatoin/Navigation';
 import { TasteIt } from './components/TesteIt/TasteIt';
 import './UpperSection.scss';
 
-export function UpperSection() {
+function UpperSectionComponent() {
   return (
     <section className="upper-section">
       <Details />
@@ -13,3 +13,5 @@ export function UpperSection() {
     </section>
   )
 }
+
+export const UpperSection = React.memo(UpperSectionComponent);

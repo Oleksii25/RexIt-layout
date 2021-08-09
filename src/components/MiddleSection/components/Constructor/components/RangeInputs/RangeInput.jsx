@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './RangeInput.scss';
 import './SoyRange.scss';
 import './SesameRange.scss';
@@ -7,7 +8,7 @@ import './CornRange.scss';
 
 
 
-export function RangeInput({ icon, name, onChange, value, disabled }) {
+function RangeInputComponent({ icon, name, onChange, value, disabled }) {
   return (
     <>
       <img
@@ -30,3 +31,12 @@ export function RangeInput({ icon, name, onChange, value, disabled }) {
     
   )
 }
+
+RangeInputComponent.propTypes = {
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.number.isRequired,
+  disabled: PropTypes.bool.isRequired,
+}
+
+export const RangeInput = React.memo(RangeInputComponent);

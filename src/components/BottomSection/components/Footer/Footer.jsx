@@ -4,7 +4,7 @@ import { Phone } from './components/Phone/Phone';
 import { Address } from './components/Address/Address';
 import { Share } from './components/Share/Share';
 
-export function Footer() {
+export function FooterComponent() {
   return (
     <footer className='footer'>
       <Phone />
@@ -13,3 +13,5 @@ export function Footer() {
     </footer>
   )
 }
+
+export const Footer = React.memo(FooterComponent);

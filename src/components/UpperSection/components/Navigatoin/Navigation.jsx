@@ -6,21 +6,21 @@ import './Navigation.scss';
 
 export function Navigation() {
 const [windowWidth, setWindowWidth] = useState(0);
-const [toggler, setToggler] = useState(false);
+const [menuVisibility, setMenuVisibility] = useState(true);
+const location = useLocation();
 
 useEffect(() => {
   setWindowWidth(window.innerWidth)
   window.addEventListener('resize', () => {
-    setWindowWidth(window.innerWidth)
+    setWindowWidth(window.innerWidth);
+    if(window.innerWidth <= 800) {
+      setMenuVisibility(false);
+    } else {
+      setMenuVisibility(true);
+    }
   })
 }, [])
 
-  if(windowWidth > 800 && toggler) {
-    setToggler(false)
-  }
-
-  const location = useLocation();
-  console.log(location)
   return (
     <nav
       className='nav'
@@ -29,21 +29,19 @@ useEffect(() => {
     >
       <button 
         className={cn({
-          'nav__icon--active': toggler,
-          'nav__icon': !toggler,
+          'nav__icon--active': menuVisibility,
+          'nav__icon': !menuVisibility,
         })}
-        onClick={() => setToggler((prevToogler) => !prevToogler)}
+        onClick={() => {
+          setMenuVisibility((prevToogler) => !prevToogler);
+        }}
       ></button>
-      <ul 
+      {menuVisibility
+        && <ul 
         className={cn({
           'nav__list': windowWidth > 800,
           'nav__list--width800': windowWidth < 800,
         })}
-        style={
-          toggler
-            ? {display: 'block'}
-            : {display: 'none'}
-        }
       >
         <li className='nav__item'>
           <HashLink
@@ -52,7 +50,7 @@ useEffect(() => {
               'nav__link--active': location.hash.includes('#home')
                 || location.hash.length === 0,
             })}
-            onClick={() => setToggler(false)}
+            onClick={() => setMenuVisibility(false)}
           >
             HOME
           </HashLink>
@@ -63,7 +61,7 @@ useEffect(() => {
             className={cn('nav__link',{
               'nav__link--active': location.hash.includes('#about us'),
             })}
-            onClick={() => setToggler(false)}
+            onClick={() => setMenuVisibility(false)}
           >
             ABOUT US
           </HashLink>
@@ -74,7 +72,7 @@ useEffect(() => {
             className={cn('nav__link',{
               'nav__link--active': location.hash.includes('#contacts'),
             })}
-            onClick={() => setToggler(false)}
+            onClick={() => setMenuVisibility(false)}
           >
             CONTACTS
           </HashLink>
@@ -85,7 +83,7 @@ useEffect(() => {
             className={cn('nav__link',{
               'nav__link--active': location.hash.includes('#constructor'),
             })}
-            onClick={() => setToggler(false)}
+            onClick={() => setMenuVisibility(false)}
           >
             CHECKOUT
           </HashLink>
@@ -96,12 +94,14 @@ useEffect(() => {
             className={cn('nav__link',{
               'nav__link--active': location.hash.includes('#share'),
             })}
-            onClick={() => setToggler(false)}
+            onClick={() => setMenuVisibility(false)}
           >
             ACCOUNT
           </HashLink>
         </li>
       </ul>
+      }
+      
     </nav>
   )
 }

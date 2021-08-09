@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './PacageMenu.scss';
 
-export function PacageMenu({ changeSize, hidePacageMenu }) {
+function PacageMenuComponent({ changeSize, hidePacageMenu }) {
   return (
     <ul
       className='constructor__pacage-list'
@@ -31,3 +32,10 @@ export function PacageMenu({ changeSize, hidePacageMenu }) {
     </ul>
   )
 }
+
+PacageMenuComponent.propTypes = {
+  changeSize: PropTypes.func.isRequired,
+  hidePacageMenu: PropTypes.func.isRequired,
+}
+
+export const PacageMenu = React.memo(PacageMenuComponent);

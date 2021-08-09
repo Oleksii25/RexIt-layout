@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { removeOrder } from '../../../../../../redux/counter/counterActions';
@@ -12,7 +13,7 @@ import ing4 from './icons/ingredient4.svg';
 
 import './Order-info.scss';
 
-export function OrderInfo({ onClick, infoVisible}) {
+function OrderInfoComponent({ onClick, infoVisible}) {
 
   const orders = useSelector((state) => state.orders.orders);
   const dispatch = useDispatch();
@@ -75,3 +76,10 @@ export function OrderInfo({ onClick, infoVisible}) {
     </section>
   )
 }
+
+OrderInfoComponent.propTypes = {
+  infoVisible: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+}
+
+export const OrderInfo = React.memo(OrderInfoComponent);

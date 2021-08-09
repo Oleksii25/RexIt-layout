@@ -1,7 +1,7 @@
 import React from 'react';
 import './Share.scss';
 
-export function Share() {
+function ShareComponent() {
   return (
     <article className='share' id='share'>
       <span className='share__icon'>
@@ -34,3 +34,5 @@ export function Share() {
     </article>
   )
 }
+
+export const Share = React.memo(ShareComponent);

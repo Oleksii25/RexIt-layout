@@ -1,7 +1,7 @@
 import React from 'react';
 import './Phone.scss';
 
-export function Phone() {
+function PhoneComponent() {
   return (
     <article className='phone'>
       <span  className="phone__icon">
@@ -13,3 +13,5 @@ export function Phone() {
     </article>
   )
 }
+
+export const Phone = React.memo(PhoneComponent);

@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Order.scss';
 import semen from './icons/semen.svg';
 
-export function Order({ order, onClick }) {
+function OrderComponent({ order, onClick }) {
   const { soy, sesame, corn, wheat, weight, price } = order;
+
   return (
     <>
       <img src={semen} alt="semen ico" className='order-info__semen'/>
@@ -24,3 +26,17 @@ export function Order({ order, onClick }) {
     </>
   )
 }
+
+OrderComponent.propTypes = {
+  order: PropTypes.shape({
+    soy: PropTypes.number.isRequired,
+    sesame: PropTypes.number.isRequired,
+    wheat: PropTypes.number.isRequired,
+    corn: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    weight: PropTypes.number.isRequired,
+  }).isRequired,
+  onClick: PropTypes.func.isRequired,
+}
+
+export const Order = React.memo(OrderComponent);

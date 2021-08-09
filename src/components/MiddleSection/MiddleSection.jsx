@@ -3,7 +3,7 @@ import { About } from './components/About/About';
 import { Constructor } from './components/Constructor/Constructor';
 import './MiddleSection.scss';
 
-export function MiddleSection() {
+function MiddleSectionComponent() {
   return (
     <section className='middle'>
       <div className='middle__content-wrapper'>
@@ -13,3 +13,5 @@ export function MiddleSection() {
     </section>
   )
 }
+
+export const MiddleSection = React.memo(MiddleSectionComponent);

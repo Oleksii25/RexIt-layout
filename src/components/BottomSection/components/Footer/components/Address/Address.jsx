@@ -1,7 +1,7 @@
 import React from 'react';
 import './Address.scss';
 
-export function Address() {
+function AddressComponent() {
   return (
     <article
       className='address'
@@ -26,3 +26,5 @@ export function Address() {
     </article>
   )
 }
+
+export const Address = React.memo(AddressComponent);
