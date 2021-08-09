@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { addOrder } from '../../../../redux/counter/counterActions';
 
@@ -23,11 +23,6 @@ function ConstructorComponent() {
     weight: 0,
     price: 0,
   };
-
-  const orders = useSelector((state) => state.orders.orders);
-
-  const totalPrice = orders.reduce(
-    (totalPrice,currentOrder) => totalPrice + currentOrder.price, 0);
 
   const dispatch = useDispatch();
 
@@ -124,7 +119,7 @@ function ConstructorComponent() {
       </h2>
       <span className='constructor__value'>
         CURRENT VALUE: <span className='constructor__price'>
-          {totalPrice}€
+          {newOrder.price}€
         </span>
       </span>
       <div className='constructor__icons-wrapper--700px'>
