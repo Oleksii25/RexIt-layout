@@ -21,6 +21,12 @@ useEffect(() => {
   })
 }, [])
 
+const closeMenu = () => {
+  if(windowWidth < 800) {
+    setMenuVisibility(false);
+  }
+}
+
   return (
     <nav
       className='nav'
@@ -50,7 +56,7 @@ useEffect(() => {
               'nav__link--active': location.hash.includes('#home')
                 || location.hash.length === 0,
             })}
-            onClick={() => setMenuVisibility(false)}
+            onClick={closeMenu}
           >
             HOME
           </HashLink>
@@ -61,7 +67,7 @@ useEffect(() => {
             className={cn('nav__link',{
               'nav__link--active': location.hash.includes('#about us'),
             })}
-            onClick={() => setMenuVisibility(false)}
+            onClick={closeMenu}
           >
             ABOUT US
           </HashLink>
@@ -72,7 +78,7 @@ useEffect(() => {
             className={cn('nav__link',{
               'nav__link--active': location.hash.includes('#contacts'),
             })}
-            onClick={() => setMenuVisibility(false)}
+            onClick={closeMenu}
           >
             CONTACTS
           </HashLink>
@@ -83,7 +89,7 @@ useEffect(() => {
             className={cn('nav__link',{
               'nav__link--active': location.hash.includes('#constructor'),
             })}
-            onClick={() => setMenuVisibility(false)}
+            onClick={closeMenu}
           >
             CHECKOUT
           </HashLink>
@@ -94,7 +100,7 @@ useEffect(() => {
             className={cn('nav__link',{
               'nav__link--active': location.hash.includes('#share'),
             })}
-            onClick={() => setMenuVisibility(false)}
+            onClick={closeMenu}
           >
             ACCOUNT
           </HashLink>
